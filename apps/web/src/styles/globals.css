@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .h-scroll-grid {
+    @apply grid gap-5 lg:gap-10 lg:grid-cols-3 grid-flow-col auto-cols-[calc(100%-1rem)] sm:auto-cols-[calc(98%)] lg:auto-cols-auto overflow-x-scroll overflow-y-hidden lg:overflow-visible px-4;
+  }
+}
+
+@layer utilities {
+  @variants responsive {
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    /* Hide scrollbar for IE, Edge and Firefox */
+    .no-scrollbar {
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
+    }
+  }
+}
